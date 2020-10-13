@@ -35,10 +35,10 @@ public class FileWithNumbersReader {
     private void handleMainInput(int chunks, int divider) {
         ThreadPoolExecutor threadPoolExecutor = (ThreadPoolExecutor) Executors.newFixedThreadPool(chunks);
         List<Callable<Boolean>> callables = new ArrayList<>();
-        
+        int startValue = 0;
+
         for (int i = 1; i <= chunks; i++) {
-            int startValue = 0;
-            int splitPosition = (int)((double)i/chunks)*numbers.size()-1;
+            int splitPosition = (int)((double)i/chunks)*numbers.size();
             callables.add(new GetDivisibility(startValue, splitPosition, divider));
             startValue = splitPosition + 1;
         }
