@@ -6,7 +6,6 @@ import java.nio.file.Files;
 import java.util.*;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.stream.Collectors;
 
@@ -70,7 +69,7 @@ public class FileWithNumbersReader {
         }
     }
 
-    //Synchronized Class
+    //Inner-Class class
     public static class GetDivisibility implements Callable<Boolean> {
         private final int startValue;
         private final int endValue;
