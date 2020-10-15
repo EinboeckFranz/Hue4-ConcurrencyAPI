@@ -16,7 +16,7 @@ public class JavaStreamsTester {
         System.out.println("Expected 0 - Actual:" + JavaStreamsTester.getCountLength3(stringList));
         System.out.println(JavaStreamsTester.deleteEmptyStrings(stringList));
         System.out.println(JavaStreamsTester
-                .getMergedString(Arrays.asList(new String[]{"This", "should", "be", "merged!"}.clone()), " "));
+                .getMergedString(Arrays.asList(new String[]{"This", "should", "be", "merged", "with", "commas"}.clone()), ","));
         System.out.println("Expected 4, 9, 16 - Actual:" + JavaStreamsTester.getSquares(integerList));
         System.out.println("Expected 4 - Actual:" + JavaStreamsTester.getMax(integerList));
         System.out.println("Expected 2 - Actual:" + JavaStreamsTester.getMin(integerList));

@@ -5,10 +5,10 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.*;
 
-public class GetSumBetweenTwoNumbers {
+public class GetSumBetweenNand0 {
 
     public static void main(String[] args) {
-        GetSumBetweenTwoNumbers main = new GetSumBetweenTwoNumbers();
+        GetSumBetweenNand0 main = new GetSumBetweenNand0();
         main.run();
     }
 
