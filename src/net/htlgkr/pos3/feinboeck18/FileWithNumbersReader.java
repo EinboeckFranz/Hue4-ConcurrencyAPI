@@ -35,9 +35,10 @@ public class FileWithNumbersReader {
         ThreadPoolExecutor threadPoolExecutor = (ThreadPoolExecutor) Executors.newFixedThreadPool(chunks);
         List<Callable<Boolean>> callables = new ArrayList<>();
         int startValue = 0;
+        int splitPosition;
 
         for (int i = 1; i <= chunks; i++) {
-            int splitPosition = (int)((double)i/chunks)*numbers.size();
+            splitPosition = (numbers.size()/chunks) * i;
             callables.add(new GetDivisibility(startValue, splitPosition, divider));
             startValue = splitPosition + 1;
         }
@@ -83,6 +84,7 @@ public class FileWithNumbersReader {
 
         @Override
         public Boolean call() {
+            //Check if Strings are correct separated System.err.println(String.format("%d %d %d", startValue, endValue, divider));
             for (int i = startValue; i <= endValue; i++) {
                 if(i % divider == 0)
                     System.out.println(i);
